@@ -113,7 +113,7 @@ function TopRightMenu({
         ];
         return (
             <ul className={mcn + mcl}>
-                <li className={lcn + ' Header__search'}>
+                <li className={'show-for-small-only Header__search'}>
                     <a href="/static/search.html" title={tt_search}>
                         {vertical ? (
                             <span>{tt_search}</span>
@@ -122,7 +122,7 @@ function TopRightMenu({
                         )}
                     </a>
                 </li>
-                {!pathCheck ? submit_story : null}
+                {submit_story}
                 {!vertical && submit_icon}
                 <LinkWithDropdown
                     closeOnClickOutside
@@ -161,9 +161,13 @@ function TopRightMenu({
         return (
             <ul className={mcn + mcl}>
                 {!vertical && (
-                    <li className="Header__search">
+                    <li className={'show-for-small-only Header__search'}>
                         <a href="/static/search.html" title={tt_search}>
-                            <Icon name="search" />
+                            {vertical ? (
+                                <span>{tt_search}</span>
+                            ) : (
+                                <Icon name="search" />
+                            )}
                         </a>
                     </li>
                 )}
@@ -183,7 +187,7 @@ function TopRightMenu({
     return (
         <ul className={mcn + mcl}>
             {!vertical && (
-                <li className="Header__search">
+                <li className={'show-for-small-only Header__search'}>
                     <a href="/static/search.html" title={tt_search}>
                         <Icon name="search" />
                     </a>
